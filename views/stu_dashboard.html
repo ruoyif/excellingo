@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+
+<p> Completed class {{numOfCplt}}</p>
+<p> Waiting for grade {{numOfWait}}</p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Discription</th>
+    </tr>
+    {% for item in myCourse %}
+    <tr>
+        <td>{{item.course_name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.description}}</td>
+        <td><a href="/courses/{{item.course_id}}">View</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+<table>
+        <tr>
+            <th>Course name</th>
+            <th>Course price</th>
+            <th>Cource Discription</th>
+        </tr>
+        {% for item in RecommendCourse %}
+        <tr>
+                <td>{{item.course_name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.description}}</td>
+                <td><a href="/courses/{{item.course_id}}">View</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+</body>
+</html>
