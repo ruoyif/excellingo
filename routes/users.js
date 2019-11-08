@@ -12,9 +12,9 @@ router.get('/', function (req, res, next) {
         db.query('SELECT * FROM course order by course_id desc limit 0,10', function (err, test){
             console.log('==========');
             if (err) {
-                res.render('stu_dashboard.html', {title: 'Express', datas: [], second:[]});  // this renders "views/users.html"
+                res.render('stu_dashboard.ejs', {title: 'Express', datas:[], second:[]});  // this renders "views/users.html"
             } else {
-                res.render('stu_dashboard.html', {title: 'Express', datas: rows,second:test});
+                res.render('stu_dashboard.ejs', {title: 'Express', datas:rows, second:test});
             }
         }) 
       })

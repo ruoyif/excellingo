@@ -16,11 +16,11 @@ router.get('/', function (req, res, next) {
                 db.query(recommend_courses, function (err, recommend_courses_out){
                     console.log('==========');
                     if (err) {
-                        res.render('stu_dashboard.html', {title: 'Express', numOfCplt:"Error", numOfWait:'error', myCourse:[], RecommendCourse:[]});  // this renders "views/stu_dashboard.html"
+                        res.render('stu_dashboard.ejs', {title: 'Express', numOfCplt:"Error", numOfWait:'error', myCourse:[], RecommendCourse:[]});  // this renders "views/stu_dashboard.html"
                     } else {
                         var numOfCplt_res = JSON.stringify(completed_course_out);
                         var numOfWait_res = JSON.stringify(wait_grade_num_out);
-                        res.render('stu_dashboard.html', {title: 'Express', numOfCplt:numOfCplt_res, numOfWait:numOfWait_res, myCourse:my_course_out, RecommendCourse:recommend_courses_out});
+                        res.render('stu_dashboard.ejs', {title: 'Express', numOfCplt:numOfCplt_res, numOfWait:numOfWait_res, myCourse:my_course_out, RecommendCourse:recommend_courses_out});
                     }
                 }) 
               })
@@ -29,4 +29,6 @@ router.get('/', function (req, res, next) {
     })
     
 });
+
+
 module.exports = router;

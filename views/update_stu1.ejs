@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile</title>
+</head>
+<body>
+<form action="/stuProfile/update" method="post">
+    <input type="hidden" value="<%=datas[0].student_id%>" name="id">
+    First Name：<input type="text" name="first_name" value="<%=datas[0].first_name%>"><br>
+    Last Name：<input type="text" name="last_name" value="<%=datas[0].last_name%>"><br>
+    Native Language:<p><%=datas[0].native_language%></p>
+    <select name="native_language">
+        <option value="<%=datas[0].native_language%>"> <%=datas[0].native_language%></option>
+        <option value="English">English</option>
+        <option value="Chinese">Chinese</option>
+        <option value="German">German</option>
+        <option value="Janpanese">Janpanese</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Italian">Italian</option>
+        <option value="French">French</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Russian">Russian</option>
+      </select><br>
+    Language to Learn：<p><%=datas[0].language_to_learn%</p>
+    <select name="language_to_learn">
+        <option value="<%=datas[0].language_to_learn%>"> <%=datas[0].language_to_learn%></option>
+        <option value="English">English</option>
+        <option value="Chinese">Chinese</option>
+        <option value="German">German</option>
+        <option value="Janpanese">Janpanese</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Italian">Italian</option>
+        <option value="French">French</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Russian">Russian</option>
+      </select><br>
+    Current Level：<p><%=datas[0].level%></p><br>
+    <select name="level">
+        <option value="<%=datas[0].level%>"><%=datas[0].level%></option>
+        <option value="Elementary (entry)">Elementary (entry)</option>
+        <option value="Intermediate (daily conversation)">Intermediate (daily conversation)</option>
+        <option value="Senior (business conversation)">Senior (business conversation)</option>
+        <option value="Senior (barrier-free business communication)">Senior (barrier-free business communication)</option>
+        <option value="Native language level">Native language level</option>
+      </select><br>
+
+    Email：<input type="text" name="email" value="<%=datas[0].email%>"><br>
+    password: <input type="text" name="password" value="<%=datas[0].password%>"><br>
+
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

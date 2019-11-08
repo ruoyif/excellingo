@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<body>
+        <br>
+        <form action="/tutorProfile/update" method="post">
+        <input type="hidden" value="<%=datas[0].tutor_id%>" name="id">
+        First Name：<input type="text" name="first_name" value="<%=datas[0].first_name%>"><br>
+        Last Name： <input type="text" name="last_name" value="<%=datas[0].last_name%>"><br>
+        <p>Language to teach: <%=datas[0].language_to_teach%></p>
+        <select name="language_to_teach">
+            <option value="<%=datas[0].language_to_teach%>"> <%=datas[0].language_to_teach%></option>
+            <option value="English">English</option>
+            <option value="Chinese">Chinese</option>
+            <option value="German">German</option>
+            <option value="Janpanese">Janpanese</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Italian">Italian</option>
+            <option value="French">French</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Russian">Russian</option>
+          </select><br>
+        <p>native_language: <%=datas[0].native_language%></p>
+        <select name="native_language">
+            <option value="<%=datas[0].native_language%>"> <%=datas[0].native_language%></option>
+            <option value="English">English</option>
+            <option value="Chinese">Chinese</option>
+            <option value="German">German</option>
+            <option value="Janpanese">Janpanese</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Italian">Italian</option>
+            <option value="French">French</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Russian">Russian</option>
+          </select><br>
+        <p>Current Level: <%=datas[0].level%></p>
+        <select name="level">
+            <option value="<%=datas[0].level%>"><%=datas[0].level%></option>
+            <option value="Proficient">Proficient</option>
+            <option value="Senior (business conversation)">Senior (business conversation)</option>
+            <option value="Senior (barrier-free business communication)">Senior (barrier-free business communication)</option>
+            <option value="Native language level">Native language level</option>
+          </select><br>
+          <p>Teaching experience: <%=datas[0].teaching_experience%></p>
+          <select name="teaching_experience">
+              <option value="<%=datas[0].teaching_experience%>"> <%=datas[0].teaching_experience%></option>
+              <option value="less than 1 year">less than 1 year</option>
+              <option value="1-2 years">1-2 years</option>
+              <option value="2-3 years">2-3 years</option>
+              <option value="3-5 years">3-5 years</option>
+              <option value="5-8 years">5-8 years</option>
+              <option value="8-10 years">8-10 years</option>
+              <option value="10-15 years">10-15 years</option>
+              <option value="15-20 years">15-20 years</option>
+              <option value="Over 20 years">Over 20 years</option>
+            </select><br>
+          <br>
+          Email：<input type="text" name="email" value="<%=datas[0].email%>"><br>
+          Password: <input type="password" name="Password" value="<%=datas[0].password%>"><br>
+          <input type="submit" value="Submit">
+        </form>
+</body>
+</html>
