@@ -3,8 +3,12 @@ var router = express.Router();
 //引入数据库包
 var db = require("./db.js");
 
+  
 router.get('/', function (req, res, next) {
-    var id = 1;
+    var id = req.session.islogin;
+    if(id == null){
+        res.redirect('/login');
+    }
     db.query('select * from tutor where tutor_id = '+id, function (err, rows) {
       console.log('==========');
           if (err) {

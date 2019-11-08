@@ -36,8 +36,11 @@ router.route('/login')
               }else{
                   if(result[0].password===req.body.password){
                       req.session.islogin=result[0].tutor_id;
+                      req.session.fullName = result[0].first_name+result[0].last_name;
+                      req.session.identity = "tutor";
                       res.locals.islogin=req.session.islogin;
                       res.cookie('islogin',res.locals.islogin,{maxAge:60000});
+                      //res.redirect('/tutorDashboard');
                       res.redirect('/home');
                   }else
                   {
@@ -53,8 +56,11 @@ router.route('/login')
               }else{
                   if(result[0].password===req.body.password){
                       req.session.islogin=result[0].student_id;
+                      req.session.fullName = result[0].first_name+" "+result[0].last_name;
+                      req.session.identity = "student";
                       res.locals.islogin=req.session.islogin;
                       res.cookie('islogin',res.locals.islogin,{maxAge:60000});
+                      //res.redirect('/studentDashboard');
                       res.redirect('/home');
                   }else
                   {
