@@ -10,6 +10,7 @@
 <p> Completed class <%=numOfCplt%></p>
 <p> Waiting for grade <%=numOfWait%></p>
 
+<p> my Course:</p> <br>
 <table>
     <tr>
         <th>Name</th>
@@ -22,11 +23,13 @@
         <td><%=myCourse[i].price%></td>
         <td><%=myCourse[i].description%></td>
         <td><a href="/courses/<%=myCourse[i].course_id%>">View</a></td>
+        <td><a href="/rateTutor/<%=myCourse[i].course_id%>" >Rate Tutor</a></td>
 
     </tr>
     <% }%>
 </table>
 
+<p> Recommend Course:</p> <br>
 <table>
         <tr>
             <th>Course name</th>

@@ -7,13 +7,9 @@ var db = require("./db.js");
 router.get('/', function (req, res, next) {
     var student_id = req.session.islogin;
     var name = req.session.fullName;
-    console.log(student_id);
     if(student_id == null){
         res.redirect('/login');
     }
-    console.log("8888888");
-    var name = req.session.fullName;
-    console.log(name);
     var completed_course_num = "SELECT COUNT(*) FROM recording where student_id ="+student_id+" and is_graded = 1";
     var wait_grade_num = "SELECT COUNT(*) FROM recording where student_id ="+student_id+" and is_graded = 0";
     var my_course = "select * from course where course_id in(select course_id from `order` where student_id =" +student_id+");";

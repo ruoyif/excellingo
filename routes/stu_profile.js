@@ -5,9 +5,7 @@ var db = require("./db.js");
 
 router.get('/', function (req, res, next) {
     var id = req.session.islogin;
-    if(id == null){
-        res.redirect('/login');
-    }
+    
 
     db.query('select * from student where student_id = '+id, function (err, rows) {
       console.log('==========');

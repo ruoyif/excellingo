@@ -15,6 +15,7 @@ var usersRouter = require('./routes/users');
 var stu_dashRouter = require('./routes/stu_dashboard');
 var stu_profileRouter = require('./routes/stu_profile');
 var tutor_profileRouter = require('./routes/tutor_profile');
+var tutor_rateRouter = require('./routes/rate');
 
 var app = express();
 //需要修改的
@@ -47,6 +48,7 @@ app.use('/users', usersRouter);
 app.use('/studentDashboard', stu_dashRouter);
 app.use('/stuProfile', stu_profileRouter);
 app.use('/tutorProfile', tutor_profileRouter);
+app.use('/rateTutor',tutor_rateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
