@@ -1,0 +1,62 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+    <script src="js/jquery.params.js"></script>
+</header>
+
+<main>
+
+<!-- <div class=""> -->
+    <div class="row">    
+        <div class="col-xs-6 col-sm-3">
+            <h1><%= mySurname%> <%= myLastname%></h1>
+        </div>
+        <div  class="col-xs-6 col-sm-3">
+            <h3>Language Level: <%= myLevel%></h3>
+        </div>
+        <!-- </div>  --> 
+</div>
+<div class = "col-sm-16">
+        <ul>
+         <table class="table table-striped">
+                <h3> Recordings </h3>
+                <% for ( var i = 0 ; i < recording_id.length ; i++){ %>
+                    <tr>
+                        <td> 
+                            <%= i %>
+                        </td>
+                        <td> 
+                            <%= submitted_date[i] %>
+                        </td>
+                        <td> 
+                            <%= description[i] %>
+                        </td>
+                            <!-- <input type="button" value="Give Feedbak" 
+                                οnclick="window.location.href='pages/index'"> -->
+                        <td>        
+                        <button onclick="location.href = './give_feedback?recording_id=<%=recording_id[i]%> ';" id="myButton" class="submit-button" >Give Feedback</button>  
+                        </td>      
+                    </tr>
+                <% } %>
+         </table>
+        </ul>
+
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

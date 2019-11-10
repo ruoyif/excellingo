@@ -1,0 +1,78 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+    <script src="js/jquery.params.js"></script>
+</header>
+
+<main>
+
+<div class = "col-sm-16">
+        <ul>
+         <table class="table table-striped">
+                <h3> Courses to select </h3>
+                <tr>
+                    <th>CourseName</th>
+                    <th>Description</th>
+                    <th>Teach</th>
+                </tr>
+                <% for ( var i = 0 ; i < to_select.course_name.length ; i++){ %>
+                    <tr>
+                        <td> 
+                            <%= to_select.course_name[i] %> 
+                        </td>
+                        <td>
+                            <%= to_select.description[i] %>
+                        </td>
+                        <td>
+                            <button onclick="location.href = './select_success?course_id=<%=to_select.course_id[i] %>'" id="myButton" class="float-left submit-button" >teach</button>
+                            </td>
+
+                    </tr>
+                    <% } %>
+            </table>
+
+        </ul>
+
+    </div>
+    <div class = "col-sm-16">
+            <ul>
+             <table class="table table-striped">
+                    <h3> My Courses</h3>
+                    <tr>
+                        <th>CourseName</th>
+                        <th>Description</th>
+                    </tr>
+                    <% for ( var i = 0 ; i < selected.course_name.length ; i++){ %>
+                        <tr>
+                            <td> 
+                                <%= selected.course_name[i] %> 
+                            </td>
+                            <td>
+                                <%= selected.description[i] %>
+                            </td>
+    
+                        </tr>
+                        <% } %>
+                </table>
+    
+            </ul>
+    
+        </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+    <script src="js/jquery.params.js"></script>
+</header>
+
+<main>
+
+<!-- <div class=""> -->
+    <div class="row">    
+        <div class="col-xs-6 col-sm-3">
+            <h1><%= myCourseName%></h1>
+        </div>
+        <div  class="col-xs-6 col-sm-3">
+            <h3><%= myDescription%></h3>
+        </div>
+        <div  class="col-xs-6 col-sm-3">
+            <h3>$USD <%= myPrice%></h3>
+        </div>
+        <!-- </div>  --> 
+</div>
+<div class = "col-sm-16">
+        <ul>
+         <table class="table table-striped">
+                <h3> Schedule </h3>
+                <% for ( var i = 0 ; i < class_id.length ; i++){ %>
+                    <tr>
+                        <td> 
+                            <%= description[i] %>
+                        </td>
+                            <!-- <input type="button" value="Give Feedbak" 
+                                οnclick="window.location.href='pages/index'"> -->
+
+                    </tr>
+                <% } %>
+         </table>
+         <br>
+         <table class="table table-striped">
+         <h3> Select A Tutor: </h3>
+                <tr>
+                <td>
+                    Tutor Name
+                </td> 
+                <td>
+                    Native Language
+                </td> 
+                <td>
+                    Tutor Language Level
+                </td>   
+                <td>
+                    Teaching Experience
+                </td>
+                <td>
+                    Select
+                </td> 
+                </tr>    
+                <% for ( var j = 0 ; j < tutor_id.length ; j++){ %>
+                    <tr>
+                            <td> 
+                                <%= first_name[j] %> <%= last_name[j] %>
+                            </td>
+                                <!-- <input type="button" value="Give Feedbak" 
+                                    οnclick="window.location.href='pages/index'"> -->
+                            <td> 
+                                <%= native_language[j] %>
+                            </td>           
+                            <td>
+                                <%= level[j] %>
+                            </td>
+                            <td>
+                                <%= teaching_experience[j] %>
+                            </td> 
+                            <td>
+                                <button onclick="location.href = './pay?course_id=<%=myCourseId%>&tutor_id=<%=tutor_id[j]%>'" id="payButton" class="submit-button" >Buy</button>
+                            </td>        
+                        </tr>
+                <% } %>
+            </table> 
+            <br>
+         <br>
+        </ul>
+
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

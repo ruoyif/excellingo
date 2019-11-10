@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<body>
+        <br>
+        <form action="/rateTutor/rated" method="post">
+
+        <input type="hidden" name = "tutor_id" value="<%=datas[0].tutor_id%>">
+
+        <p>Tutor Name: <%=datas[0].first_name%>&nbsp<%=datas[0].last_name%></p>
+        <p>Language to Teach: <%=datas[0].language_to_teach%></p>
+        <p>Native Language: <%=datas[0].native_language%></p>
+        <p>Teaching_experience: <%=datas[0].teaching_experience%></p>
+        <p>Current Level: <%=datas[0].level%></p>
+        <p>Email: <%=datas[0].email%></p>
+        <p>Rate:</p>
+                    <input type="radio" name="rate" value="1">1. Very Unsatisfied<br>
+                    <input type="radio" name="rate" value="2">2. Not so good, I won't recommend to others<br>
+                    <input type="radio" name="rate" value="3">3. Not so much helpful, but I at least learned sth<br>
+                    <input type="radio" name="rate" value="4">4. He/She has some good method to advice but lack of patient<br>
+                    <input type="radio" name="rate" value="5">5. Help me partically<br>
+                    <input type="radio" name="rate" value="6">6. She/He is good but need some improvement of her/his teaching<br>
+                    <input type="radio" name="rate" value="7">7. She/He is good, worth the price<br>
+                    <input type="radio" name="rate" value="8">8. He/She is helpful, I want to recommend to my friends.<br>
+                    <input type="radio" name="rate" value="9">9. Excellent, I want to select his/her course again<br>
+                    <input type="radio" name="rate" value="10">10. He/She's the best tutor I've ever meet<br>
+            <br>
+          <input type="submit" value="Submit">
+        </form>
+</body>
+</html>

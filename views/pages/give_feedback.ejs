@@ -1,0 +1,52 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+    <script src="js/jquery.params.js"></script>
+</header>
+
+<main>
+
+<div id="header">
+         <h2>Give your valuable here!</h2>
+</div>
+
+<!-- <div> -->
+
+<!-- <div class="text" id="content"> -->
+    
+<div>
+    <a href= <%= recording_link%> target="_blank">  Click to access the recording</a> <br>
+</div>
+    
+    <form name="input" action="./save_feedback" method="get">
+    <div>
+        Comments: <br>
+        <input type="text"   value= " <%= comment %>" name="comment" style="height:200px;width:300px;border: 1px solid #2e82ff;text-align:center">
+         <input type="hidden" name="recording_id" value= <%= recording_id %> />    
+            </div>   
+                <br>
+                <div>
+                <input type="submit" value="Submit">
+            </div>
+                </form>
+
+<!-- </div> -->
+
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+    <script src="js/jquery.params.js"></script>
+</header>
+
+<main>
+
+<div id="header">
+         <h1><%= courseInfo.course_name%></h1>
+         <h2><%= courseInfo.course_descriotion%></h2>
+</div>
+
+<div>
+<div id="menu" style="background-color:rgb(238, 236, 234); height:200px;width:300px;float:left;">
+
+                <% for ( var i = 0 ; i < class_info.class_id.length ; i++){ %>
+
+                            <a href="/recording?class_id=<%=class_info.class_id[i]%>&course_id=<%=courseInfo.course_id%>" ><%= class_info.class_description[i] %> </a> <br>
+                            
+
+                    <% } %>
+
+    </div>
+
+<div class="text" id="content"style="height:200px;width:300px;float:left;border: 1px solid #2e82ff;text-align:center;">
+    
+    <a href= <%= curClassInfo.curClass_link%> target="_blank">  Click here to see the contents</a> <br>
+    <br>
+    <a href= "https://drive.google.com/drive/my-drive" target="_blank">  Click here to record</a> <br>
+    <form name="input" action="./save_recording" method="get">
+                Recording Link: <input type="text"  value= "<%=recording_info.recording_link%>" name="link">
+                <input type="hidden" name="class_id" value= <%= curClassInfo.curClass_id %> /> 
+                <input type="hidden" name="tutor_id" value= <%= courseInfo.tutor_id %> />         
+                <input type="submit" value="Submit">
+                </form>
+
+</div>
+
+<div class="text" id="comments"style="height:200px;width:300px;float:left;border: 1px solid #2e82ff;text-align:center;">
+    
+        <%= recording_info.comment%>
+    
+    </div>
+</div>
+</main>
+<div>
+<footer>
+    <% include ../partials/footer %>
+</footer>
+</div>
+
+</body>
+</html>

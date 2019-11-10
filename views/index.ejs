@@ -1,0 +1,8 @@
+
+<%- include header %>
+<% if(locals.islogin){%>
+User：<h2><%= test %></h2>Already Logined in 
+<% }else{%>
+<p><a href="/login">Login</a></p>
+<%}%>
+<%- include footer %>

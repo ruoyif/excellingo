@@ -1,0 +1,73 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+    <script src="js/jquery.params.js"></script>
+</header>
+
+<main>
+
+<!-- <div class=""> -->
+    <div class="row">    
+        <div class="col-xs-6 col-sm-3">
+            <h1><%= myStudentNum%></h1>
+            <p>Students</p>
+        </div>
+        <div  class="col-xs-6 col-sm-3">
+            <h1><%= unCompletedNum%></h1>
+            <p>Uncompleted</p>
+        </div>
+        <div  class="col-xs-6 col-sm-3">
+            <h1><%= completedNum%></h1>
+            <p>Completed</p>
+        </div>   
+        <div  class="col-xs-6 col-sm-3">
+            <h1><%= myRate%></h1>
+            <p>Rate</p>
+        <!-- </div>  --> 
+</div>
+<div class = "col-sm-16">
+        <ul>
+         <table class="table table-striped">
+                <h3> Students </h3>
+                <tr>
+                    <th>Name</th>
+                    <th>CourseName</th>
+                    <th>FeedBack</th>
+                </tr>
+                <% for ( var i = 0 ; i < first_name.length ; i++){ %>
+                    <tr>
+                        <td> 
+                            <%= first_name[i] %> <%= last_name[i] %> 
+                        </td>
+                        <td>
+                            <%= course_name[i] %>
+                        </td>
+                        <td>
+                            <button onclick="location.href = './recording_list?student_id=<%=stu_Id[i]%>&course_id=<%=course_Id[i]%>';" id="myButton" class="float-left submit-button" >Give Feedback</button>
+                        </td>
+
+                    </tr>
+                    <% } %>
+            </table>
+
+        </ul>
+
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
