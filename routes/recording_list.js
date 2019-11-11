@@ -6,8 +6,10 @@ var ejs = require("ejs");
 var express = require('express');
 
 exports.recordingList = function(req, res){
-    var student_id = 1;
-    var recordingLists = "SELECT first_name as surname, last_name as lastname, level as levels from student where student_id ="+student_id+" ; SELECT recording.recording_id as recording, recording.submitted_date as time, class.description as description FROM recording inner join class on recording.class_id = class.class_id where recording.student_id ="+student_id+" and recording.is_graded = 0 order by recording.submitted_date ";
+    var student_id = req.query.student_id;
+    //var tutor_id = req.session.islogin;
+    var course_id = req.query.course_id;
+    var recordingLists = "SELECT first_name as surname, last_name as lastname, level as levels from student where student_id ="+student_id+" ; SELECT recording.recording_id as recording, recording.submitted_date as time, class.description as description FROM recording inner join class on recording.class_id = class.class_id where recording.student_id ="+student_id+" and recording.is_graded = 0 and class.course_id="+course_id+" order by recording.submitted_date ";
     console.log("Query is:" + recordingLists);
 	mysqlpool.handle_database(function(err,result){
 		if(err){
